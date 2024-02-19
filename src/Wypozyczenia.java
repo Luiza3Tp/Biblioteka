@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 
-public class wypozyczenia {
+public class Wypozyczenia {
     private static final int DLUGOSC=30;
     private  static double STAWKA= 0.1;
     private Egzemplarz egzemplarz;
@@ -11,7 +11,7 @@ public class wypozyczenia {
     private LocalDate dataOddania;
     private LocalDate planowanaDataOddania;
 
-    public wypozyczenia(Egzemplarz egzemplarz){
+    public Wypozyczenia(Egzemplarz egzemplarz){
         this.egzemplarz=egzemplarz;
         dataWyporzyczenia=LocalDate.now();
         planowanaDataOddania=dataWyporzyczenia.plusDays(DLUGOSC);
