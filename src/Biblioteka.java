@@ -6,10 +6,11 @@ public class Biblioteka {
     ArrayList<Egzemplarz> egzemplarze = new ArrayList<>();
     ArrayList<Wypozyczenia> wypozyczenie = new ArrayList<>();
 
-    public void dodajKsiazke(){
+    public void dodajKsiazke(Ksiazka ksiazka){
+        ksiazki.add(ksiazka);
     }
 
-    public  Ksiazka znajdzKsiazke(String tytul){
+    public Ksiazka znajdzKsiazke(String tytul){
         for (Ksiazka ksiazka : ksiazki) {
             if(ksiazka.getTytul().equals(tytul)){
                 return ksiazka;
@@ -19,32 +20,31 @@ public class Biblioteka {
     }
 
     public ArrayList<Ksiazka> znajdzKsiazkiAutora(Autor autor) {
+        ArrayList<Ksiazka> ksiazkiAutora = new ArrayList<>();
         for (Ksiazka ksiazka : ksiazki) {
             if(ksiazka.getAutor().equals(autor)) {
-                return
-
+                ksiazkiAutora.add(ksiazka);
             }
         }
-        return null;
+        return ksiazkiAutora;
     }
 
     public ArrayList<Ksiazka> znajdzKsiazkiPoGatunku(Gatunek gatunek){
+        ArrayList<Ksiazka> ksiazkiWGatunku = new ArrayList<>();
         for (Ksiazka ksiazka : ksiazki) {
             if(ksiazka.getGatunek().equals(gatunek)) {
-                return ;
-
+                ksiazkiWGatunku.add(ksiazka);
             }
         }
-        return null;
+        return ksiazkiWGatunku;
     }
 
     public Egzemplarz znajdzEgzemplarzKsiazki(Ksiazka ksiazka){
-        for (Ksiazka ksiazka : ksiazki) {
-            if(ksiazka.get().equals(ksiazka)) {
-                return ;
-
+            for (Egzemplarz egzemplarz : egzemplarze){
+                if(egzemplarz.getKsiazka().equals(ksiazka)){
+                    return egzemplarz;
+                }
             }
-        }
         return null;
     }
 }
